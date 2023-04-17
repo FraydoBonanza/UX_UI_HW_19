@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+  /* Multiple Selectors */
+  .welcome, .mywork {border: 2px solid ;
+    padding: 10px;
+    margin-bottom: 5px; }
+
+/* Font Styles */
+h1 {font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+p {font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  line-height: 1.4;
+  background-color: #333;
+}
+
+#header {
+  margin-bottom: 15px;
+  background-color: #fff;
+  padding: 10px;
+}
+
+#main {
+  background-color: #e1edf9;
+  float: left;
+  width: 66%;
+
+}
+
+.welcome { color:black;
+  background-image: url(/img/Ocean_Photo.jpeg);
+background-size: 100%;
+background-repeat:inherit;
+background-position: center center;
+padding: 20px;
+}
+
+
+#sidebar {
+  float: right;
+  width: 29%;
+}
+
+.clr {
+  clear: both;
+}
+
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  color: rgb(246, 232, 232);
+  padding: 10px;
+}
+
+#footer ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+#footer li {
+  margin-right: 20px;
+  list-style: none;
+}
+
+.text-center {
+  display: block;
+  text-align: center;
+}
+
+
+.article {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+.article img {
+  display: block;
+  margin: 0 auto 12px;
+  max-width: 100%;
+  height: auto;
+}
+
+ /* Grid container */
+ .mywork {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+}
+
+/* Card styles */
+.cardheader {
+  background-color: #e1edf9;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* Image styles */
+.article img {
+  width: 100%;
+}
+
+/* This is for my Contact Me Button */
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button[type="reset"] {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  button[type="submit"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+  
+  button[type="reset"] {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+
+/* Content of my floater */
+.contact-form-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: none;
+}
+
+.contact-form-overlay.show {
+  display: block;
+}
+
+
+#contact-floater {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: none;
+}
+
+#contact-floater.show {
+  display: block;
+}
+
+.contact-floater-content {
+  width: 300px;
+  max-width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: left; /* Add this to justify the content to the left */
+  display: flex;
+  flex-direction: column; /* Add this to order the items vertically */
+  gap: 10px; /* Add this to add some space between the items */
+}
+
+.contact-floater-content label {
+  font-weight: bold;
+}
+
+.contact-floater-content input[type="text"],
+.contact-floater-content input[type="email"],
+.contact-floater-content textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.contact-floater-content button[type="submit"],
+.contact-floater-content button[type="reset"] {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-floater-content button[type="submit"]:hover,
+.contact-floater-content button[type="reset"]:hover {
+  background-color: #008CBA;
+}
+
+
+.contact-floater-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.contact-floater-hide {
+  animation: fadeOut 1s ease-in-out forwards;
+  animation-delay: 5s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
